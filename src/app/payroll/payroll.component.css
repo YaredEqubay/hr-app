@@ -1,0 +1,21 @@
+.main-body {
+  display: flex;
+  gap: 3rem;
+  padding: 20px 20px 0 20px;
+}
+.mat-card-left {
+  height: 30%;
+}
+.mat-card-right {
+  width: 120%;
+}
+.test {
+  width: 100%;
+}
+.edit-delete-icons {
+  display: flex;
+}
+form,
+mat-form-field {
+  width: 100%;
+}

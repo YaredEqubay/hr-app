@@ -1,0 +1,16 @@
+mat-form-field {
+  width: 25%;
+}
+.main-body {
+  padding: 20px;
+}
+.SearchAndButton {
+  display: flex;
+  justify-content: space-between;
+}
+.search-gap {
+  display: flex;
+  gap: 14rem;
+  font-size: 20px; 
+}
+

@@ -1,0 +1,14 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.edit-delete {
+  display: flex;
+}
+.gap {
+  display: flex;
+  gap: 5px;
+}
+.main-body {
+  padding: 20px;
+}
+

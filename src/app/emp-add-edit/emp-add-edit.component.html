@@ -1,0 +1,76 @@
+<div mat-dialog-title>
+  <h1>Employee FORM</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="Eg: Kirubel" formControlName="firstName" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Eg: Beakal" formControlName="lastName" />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="email"
+          placeholder="Eg: Kirubel@gmail.com"
+          formControlName="email"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Birth Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-radio-group aria-label="Select an option" formControlName="gender">
+        <label><b>Gender</b></label>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="male">Male</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="row">
+      <mat-form-field id="select" appearance="outline">
+        <mat-label>Select Education Background</mat-label>
+        <mat-select [(value)]="selected" formControlName="education">
+          <mat-option>None</mat-option>
+          <mat-option value="Frontend Developer">Frontend Developer</mat-option>
+          <mat-option value="Backend Developer">Backend Developer</mat-option>
+          <mat-option value="Full Stack Developer">Full Stack Developer</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <div class="row" id="experience">
+      <mat-form-field appearance="outline">
+        <mat-label>Years of Experience</mat-label>
+        <input 
+          matInput
+          type="number"
+          placeholder="Eg: 4"
+          formControlName="experience"
+        />
+      </mat-form-field>
+    </div>
+    </div>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">
+      Cancel
+    </button>
+    <button mat-raised-button color="primary" type="submit">
+      {{ data ? "Update" : "Save" }}
+    </button>
+  </div>
+</form>
